@@ -1,5 +1,4 @@
 <?php
-
 function soma($a, $b)
 {
   return $a + $b;
@@ -15,33 +14,33 @@ function multiplicacao($a, $b)
 function divisao($a, $b)
 {
   if ($a == 0 or $b == 0) {
-    echo "Error, não é possivel usar o 0 nessa operação!\n";
+    echo "Erro: Divisão por zero!\n";
+  } else {
+    return $a / $b;
   }
-  return $a / $b;
-  
 }
 while (true) {
   echo "\n1:soma\n2:subtração\n3:multiplicação:\n4:divisão:\n5:Sair\n";
   $operacao = readline("Selecione a opção desejada: ");
-  if ($operacao == "5") {
+  if ($operacao == 5) {
     echo "Saindo do Programa...";
     break;
   }
   $primeiro_numero = readline("Digite o primeiro número:");
   $segundo_número = readline("Digite o segundo número desejado:");
-  
-  
-  if ($operacao == "1") {
+
+
+  if ($operacao == 1) {
     $result = soma($primeiro_numero, $segundo_número);
     echo $result;
-  } elseif ($operacao == "2") {
-      $result = subtracao($primeiro_numero, $segundo_número);
-      echo $result;
-  } elseif ($operacao == "3") {
-      $result = multiplicacao($primeiro_numero, $segundo_número);
-      echo $result;
-  } elseif ($operacao == "4") {
-      $result = divisao ($primeiro_numero, $segundo_número);
-      echo $result;
+  } elseif ($operacao == 2) {
+    $result = subtracao($primeiro_numero, $segundo_número);
+    echo $result;
+  } elseif ($operacao == 3) {
+    $result = multiplicacao($primeiro_numero, $segundo_número);
+    echo $result;
+  } elseif ($operacao == 4) {
+    $result = divisao($primeiro_numero, $segundo_número);
+    echo $result;
   } else "Opção inválida";
 }
