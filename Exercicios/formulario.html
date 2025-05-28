@@ -1,50 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulário RDR2</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        crossorigin="anonymous" />
 
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <!-- Fonte estilo western -->
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet" />
 
-    <title>FormularioEx</title>
+    <style>
+        body {
+            /* Fundo rústico (troque a URL se quiser outra imagem) */
+            background: linear-gradient(rgba(68, 38, 10, 0.85), rgba(39, 20, 5, 0.85)),
+                url('https://imgur.com/K6Fkdei.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Stardos Stencil', serif;
+            color: #d7b77a;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        form {
+            background: rgba(68, 38, 10, 0.9);
+            border: 3px solid #7a4a1a;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 0 20px 5px rgba(122, 74, 26, 0.7);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        label {
+            color: #b68848;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #321f07;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: #4b2e0e;
+            border: 1.5px solid #b68b40;
+            color: #f0db9b;
+            font-weight: 600;
+            box-shadow: inset 0 1px 2px #321f07;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #7a5d2a;
+            font-style: italic;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #f0db9b;
+            box-shadow: 0 0 8px 2px #f0db9b;
+            background-color: #5c3e12;
+            color: #fff8dc;
+            outline: none;
+        }
+
+        option[value=""] {
+            color: #a68c5b;
+            font-style: italic;
+        }
+
+        .btn-primary {
+            background-color: #b68848;
+            border-color: #a67c2c;
+            color: #3e2e0f;
+            font-weight: 700;
+            box-shadow: 0 0 10px #b68848;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #d4b163;
+            border-color: #d4b163;
+            box-shadow: 0 0 20px #d4b163;
+            color: #3e2e0f;
+        }
+    </style>
 </head>
 
-<body class="d-flex align-items-center py-4 bg-light vh-100" >
-    <form action="logon.php" class="mx-auto " method="get" target="_blank">
+<body>
+    <form action="logon.php" class="mx-auto" method="post" target="_blank">
         <div class="mb-3">
-            <label for="exampleInputnome1" class="form-label">Nome</label>
-            <input type="nome" class="form-control" name="input_nome">
+            <label for="input_nome" class="form-label">Nome</label>
+            <input type="text" placeholder="Digite seu nome" class="form-control" id="input_nome" name="input_nome"
+                required />
         </div>
-        <div class="mb-3">
-            <label for="exampleInputCPF1" class="form-label">CPF</label>
-            <input type="cpf" class="form-control" name="input_cpf">
-            <div class="mb-3">
-                <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
-                <select id="inputEstadoCivil" class="form-select">
-                    <option selected>Escolha...</option>
-                    <option selected>Solteiro</option>
-                    <option selecte>Casado</option>
-                    <option selected>Divorciado</option>
-                    <option selected>Viuvo</option>
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="inputGenero" class="form-label">Genero</label>
-                <select id="inputGenero" class="form-select">
-                    <option selected>Escolha...</option>
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Alien</option>
-                </select>
-            </div>
-            <button type="avancar" class="btn btn-primary">Avançar</button>
 
+        <div class="mb-3">
+            <label for="input_cpf" class="form-label">CPF</label>
+            <input type="text" placeholder="Digite seu CPF" class="form-control" id="input_cpf" name="input_cpf"
+                required />
+        </div>
+
+        <div class="mb-3">
+            <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
+            <select id="inputEstadoCivil" name="inputEstadoCivil" class="form-select" required>
+                <option value="" selected>Escolha...</option>
+                <option value="Solteiro">Solteiro</option>
+                <option value="Casado">Casado</option>
+                <option value="Divorciado">Divorciado</option>
+                <option value="Viúvo">Viúvo</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputGenero" class="form-label">Gênero</label>
+            <select id="inputGenero" name="inputGenero" class="form-select" required>
+                <option value="" selected>Escolha...</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Avançar</button>
     </form>
 </body>
 
