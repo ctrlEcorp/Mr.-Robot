@@ -1,0 +1,1 @@
+SELECT * FROM user_cadastro.new_table;
