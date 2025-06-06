@@ -24,7 +24,7 @@
           <a class="nav-link" href="?page=novo">Novo Usuario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Listar Usuarios</a>
+          <a class="nav-link" href="?page=listar">Listar Usuarios</a>
         </li>        
       </ul>
     </div>
@@ -38,6 +38,8 @@
             match (@$_REQUEST['page']){
               'novo' => include('novo-usuario.php'),
               'salvar' => include('salvar-usuario.php'),
+              'listar' => include('listar-usuario.php'),
+              'editar' => include('editar-usuario.php'),
               default => print "Bem vindo!"
             }
          ?>
