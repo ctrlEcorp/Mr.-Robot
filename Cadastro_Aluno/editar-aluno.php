@@ -11,6 +11,7 @@ $row=$result->fetch_object();
 
 <form action="?page=salvar" method="post">
     <input type="hidden" name="acao" value="editar">
+    <input type="hidden" name = "id" value= "<?=$row->id_usuario?>"> 
 
     <div class="row mb-3">
         <div class="col-md-6">
