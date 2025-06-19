@@ -1,0 +1,39 @@
+Table: consultas
+Columns:
+id_consulta int AI PK 
+data_consulta date 
+hora_consulta time 
+observacao text 
+id_medico int 
+id_paciente int 
+id_pessoa int
+
+Table: exames
+Columns:
+id_exame int AI PK 
+categoria varchar(45) 
+resultado varchar(45) 
+id_consulta int
+
+Table: medicos
+Columns:
+id_medico int PK 
+crm int 
+especialidade varchar(45) 
+id_pessoa int
+
+Table: pacientes
+Columns:
+id_paciente int AI PK 
+patologia varchar(45) 
+comorbidade varchar(45) 
+id_pessoa int
+
+Table: pessoas
+Columns:
+id_pessoa int AI PK 
+nome varchar(100) 
+cpf int 
+telefone int 
+genero varchar(45) 
+estado_civil varchar(45)
